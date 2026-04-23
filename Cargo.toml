@@ -1,0 +1,18 @@
+[package]
+name = "geyser-relay"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tonic = "0.14"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+tokio-tungstenite = "0.29.0"
+axum = { version = "0.8.9", features = ["ws"] }
+prost = "0.14"
+tonic-prost = "0.14"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[build-dependencies]
+tonic-prost-build = "0.14"

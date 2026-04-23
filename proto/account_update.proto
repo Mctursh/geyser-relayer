@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package account_update;
+
+message SubscribeRequest {}
+
+message AccountUpdate {
+    uint64 slot = 1;
+    bool is_startup = 2;
+    bytes pubkey = 3;
+    bytes owner = 4;
+    uint64 lamports = 5;
+    bytes data = 6;
+    uint64 write_version = 7;
+}
+
+service AccountUpdateService {
+    rpc SubscribeAccountUpdates (SubscribeRequest) returns (stream AccountUpdate);
+}
